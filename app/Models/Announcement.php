@@ -19,7 +19,8 @@ class Announcement extends Model
         'brand',
         'model',
         'year',
-        'state'
+        'state',
+        'vehicleType'
     ];
 
     public function user()

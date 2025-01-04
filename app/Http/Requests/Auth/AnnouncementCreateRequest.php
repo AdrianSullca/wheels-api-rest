@@ -20,7 +20,8 @@ class AnnouncementCreateRequest extends FormRequest
             'price' => 'required|numeric|min:0',
             'state' => 'in:active,inactive',
             'photos' => 'required|array|min:1',
-            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,avif,svg|max:2048',
+            'vehicleType' => 'required|string|in:sedan,sport,van,other',
         ];
     }
 

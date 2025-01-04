@@ -15,8 +15,20 @@ class AnnouncementController extends Controller
     {
         $user = $request->user();
         $announcements = Announcement::where('state', 'active')
-            ->where('user_id', '!=', $user->id)
+            // ->where('user_id', '!=', $user->id)
+            ->where('id', '=', 1)
+            ->with('user') // Carga la relación 'user' de cada anuncio
+            ->with('photos') // Carga la relación 'photos' de cada anuncio
             ->get();
+
+        $announcements = $announcements->map(function ($announcement) {
+            // Extrae las URLs de las fotos usando pluck()
+            $announcement->photoUrls = $announcement->photos->pluck('image_url');
+            // Elimina la relación 'photos' completa
+            unset($announcement->photos);
+            // Devuelve el anuncio modificado
+            return $announcement;
+        });
 
         return response()->json([
             'announcements' => $announcements,

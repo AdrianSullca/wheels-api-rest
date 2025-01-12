@@ -22,7 +22,7 @@ class MainSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'info.adriannn@gmail.com',
             'phone_number' => 999999999,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736545077/announcements_photos/akfh7cmj35d5ynlmtolk.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => true,
             'enabled' => true,
@@ -33,7 +33,7 @@ class MainSeeder extends Seeder
             'name' => 'Adrian Sullca',
             'email' => 'adrian.sullca@cirvianum.cat',
             'phone_number' => 631367253,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736545077/announcements_photos/akfh7cmj35d5ynlmtolk.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -427,6 +427,35 @@ class MainSeeder extends Seeder
         Favorite::create([
             'user_id' => 2,
             'announcement_id' => 2,
+        ]);
+
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 9,
+        ]);
+
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 10,
+        ]);
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 13,
+        ]);
+
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 8,
+        ]);
+
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 11,
+        ]);
+
+        Favorite::create([
+            'user_id' => 2,
+            'announcement_id' => 4,
         ]);
 
 

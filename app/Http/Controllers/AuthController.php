@@ -7,14 +7,42 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Response;
-
 use Illuminate\Validation\Rules;
+use Laravel\Sanctum\PersonalAccessToken;
+
 
 class AuthController extends Controller
 {
+    /**
+     * @OA\Post(
+     *     path="/api/register",
+     *     tags={"Authentication"},
+     *     summary="Register a new user",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             @OA\Property(property="name", type="string", example="John Doe"),
+     *             @OA\Property(property="email", type="string", example="john.doe@example.com"),
+     *             @OA\Property(property="password", type="string", example="Password123!"),
+     *             @OA\Property(property="password_confirmation", type="string", example="Password123!"),
+     *             @OA\Property(property="phone_number", type="string", example="123456789")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Registration successful. Please confirm your email."
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation failed"
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="An error occurred during registration"
+     *     )
+     * )
+     */
     public function register(Request $request)
     {
         try {
@@ -53,23 +81,50 @@ class AuthController extends Controller
         }
     }
 
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     tags={"Authentication"},
+     *     summary="Log in a user",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             @OA\Property(property="email", type="string", example="john.doe@example.com"),
+     *             @OA\Property(property="password", type="string", example="Password123!")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Login successful",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="token", type="string", example="token_string"),
+     *             @OA\Property(property="user", type="object", example={"id":1, "name":"John Doe", "email":"john.doe@example.com"})
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Invalid credentials"
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Email not verified"
+     *     )
+     * )
+     */
     public function login(Request $request)
     {
         $user = User::where('email', $request->email)->first();
 
-        // Verifica que el usuario exista y la contraseña sea correcta
         if ($user && Hash::check($request->password, $user->password)) {
             if (!$user->hasVerifiedEmail()) {
                 return response()->json(['message' => 'Please verify your email address before logging in.'], 403);
             }
-            // Verifica si el usuario ya tiene un token activo
+
             $existingToken = $user->tokens()->where('name', 'access_token')->first();
 
             if ($existingToken) {
-                // Si existe un token, devuélvelo
                 $token = $existingToken->plainTextToken;
             } else {
-                // Si no existe, crea uno nuevo
                 $token = $user->createToken('access_token')->plainTextToken;
             }
 
@@ -85,10 +140,37 @@ class AuthController extends Controller
         ], 401);
     }
 
+    /**
+     * @OA\Post(
+     *     path="/api/logout",
+     *     tags={"Authentication"},
+     *     summary="Log out a user",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Logged out successfully"
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No token provided or invalid token"
+     *     )
+     * )
+     */
     public function logout(Request $request)
     {
-        $request->user()->tokens()->delete();
+        $token = $request->bearerToken();
+        if (!$token) {
+            return response()->json(['message' => 'No token provided'], 401);
+        }
+        $accessToken = PersonalAccessToken::findToken($token);
 
-        return response()->json('Logged out successfully');
+        if (!$accessToken) {
+            return response()->json(['message' => 'Invalid token'], 401);
+        }
+
+        $user = $accessToken->tokenable;
+        $accessToken->delete();
+
+        return response()->json(['message' => 'Logged out successfully'], 200);
     }
 }

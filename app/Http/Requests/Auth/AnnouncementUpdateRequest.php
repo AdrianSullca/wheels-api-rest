@@ -21,12 +21,16 @@ class AnnouncementUpdateRequest extends FormRequest
         return [
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'model' => 'nullable|string|max:255',
+            'vehicleType' => 'nullable|string|in:sedan,sport,van,other',
             'brand' => 'nullable|string|max:255',
-            'kilometers' => 'nullable|numeric|min:0',
             'year' => 'nullable|integer|min:1900|max:' . date('Y'),
+            'model' => 'nullable|string|max:255',
+            'kilometers' => 'nullable|numeric|min:0',
             'price' => 'nullable|numeric|min:0',
-            'state' => 'nullable|in:active,inactive',
+            'oldPhotos' => 'nullable|json',
+            'newPhotos' => 'nullable|array',
+            'newPhotos.*' => 'nullable|file|image|mimes:jpeg,png,jpg,gif,avif,svg|max:2048',
+            'state' => 'required|string|in:active,inactive'
         ];
     }
 }

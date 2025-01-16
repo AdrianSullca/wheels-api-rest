@@ -17,7 +17,7 @@ class TransactionCreateRequest extends FormRequest
     {
         return [
             'full_name' => 'required|string|max:255',
-            'card_expiration' => 'required|date_format:m/y|after:today',
+            'card_expiration' => 'required|date_format:m/Y|after:today',
             'card_number' => 'required|digits_between:13,19',
             'card_cvv' => 'required|digits:3',
         ];

@@ -1868,6 +1868,200 @@
                 }
             }
         },
+        "/api/transactions": {
+            "get": {
+                "tags": [
+                    "Transactions"
+                ],
+                "summary": "Get all transactions of the authenticated user",
+                "operationId": "37a29b55970dae4255d0e9550eb1048d",
+                "responses": {
+                    "200": {
+                        "description": "List of transactions",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "transactions": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "example": {
+                                                    "id": 1,
+                                                    "buyer_id": 42,
+                                                    "seller_id": 15,
+                                                    "final_price": 100,
+                                                    "created_at": "2025-01-01T12:00:00Z"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication required"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/transactions/{id}/create": {
+            "post": {
+                "tags": [
+                    "Transactions"
+                ],
+                "summary": "Create a transaction for an announcement",
+                "operationId": "3c43e01e60637b3e2cda59229cd6e525",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the announcement",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 42
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "full_name": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "card_expiration": {
+                                        "type": "string",
+                                        "example": "12/25"
+                                    },
+                                    "card_number": {
+                                        "type": "string",
+                                        "example": "1234567812345678"
+                                    },
+                                    "card_cvv": {
+                                        "type": "string",
+                                        "example": "123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Transaction successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Transaction successfully created"
+                                        },
+                                        "transaction": {
+                                            "type": "object",
+                                            "example": {
+                                                "id": 1,
+                                                "buyer_id": 42,
+                                                "seller_id": 15,
+                                                "final_price": 100,
+                                                "created_at": "2025-01-01T12:00:00Z"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Authentication required"
+                    },
+                    "422": {
+                        "description": "Cannot create transaction because the ad is yours"
+                    },
+                    "404": {
+                        "description": "Announcement not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/transactions/{id}": {
+            "get": {
+                "tags": [
+                    "Transactions"
+                ],
+                "summary": "Get a specific transaction by ID",
+                "operationId": "6ce530a386636ee17cb37c028c93315a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the transaction",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 42
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transaction details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "transaction": {
+                                            "type": "object",
+                                            "example": {
+                                                "id": 1,
+                                                "buyer_id": 42,
+                                                "seller_id": 15,
+                                                "final_price": 100,
+                                                "created_at": "2025-01-01T12:00:00Z"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "You are not authorized to view this transaction"
+                    },
+                    "404": {
+                        "description": "Transaction not found"
+                    },
+                    "401": {
+                        "description": "Authentication required"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/user": {
             "get": {
                 "tags": [
@@ -2233,6 +2427,10 @@
         {
             "name": "Reviews",
             "description": "Reviews"
+        },
+        {
+            "name": "Transactions",
+            "description": "Transactions"
         },
         {
             "name": "User",

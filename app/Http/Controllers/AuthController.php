@@ -58,7 +58,7 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->string('password')),
                 'phone_number' => $request->phone_number,
-                'profile_picture_path' => 'images/default_profile.avif',
+                'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
                 'admin' => false,
                 'enabled' => true
             ]);

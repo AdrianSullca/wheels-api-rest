@@ -209,7 +209,7 @@ class AnnouncementController extends Controller
             ], 404);
         }
 
-        if ($announcement->user_id !== $user->id && $announcement->state !== 'active') {
+        if ($announcement->user_id !== $user->id && $announcement->state == 'inactive') {
             return response()->json([
                 'message' => 'Announcement not found',
             ], 404);

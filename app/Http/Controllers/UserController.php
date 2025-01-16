@@ -106,7 +106,7 @@ class UserController extends Controller
             $validatedData = $request->validated();
 
             if ($request->hasFile('new_profile_picture')) {
-                if ($user->profile_picture_path && $user->profile_picture_path !== 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736545077/announcements_photos/akfh7cmj35d5ynlmtolk.png') {
+                if ($user->profile_picture_path && $user->profile_picture_path !== 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png') {
                     $oldPublicId = $this->getPublicIdFromUrl($user->profile_picture_path);
                     if ($oldPublicId) {
                         Cloudinary::destroy($oldPublicId);

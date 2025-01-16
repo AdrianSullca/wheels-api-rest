@@ -22,7 +22,7 @@ class MainSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'info.adriannn@gmail.com',
             'phone_number' => 999999999,
-            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736545077/announcements_photos/akfh7cmj35d5ynlmtolk.png',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => true,
             'enabled' => true,
@@ -33,7 +33,7 @@ class MainSeeder extends Seeder
             'name' => 'Adrian Sullca',
             'email' => 'adrian.sullca@cirvianum.cat',
             'phone_number' => 631367253,
-            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736545077/announcements_photos/akfh7cmj35d5ynlmtolk.png',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -44,7 +44,7 @@ class MainSeeder extends Seeder
             'name' => 'Marta Fiorella',
             'email' => 'marta@gmail.com',
             'phone_number' => 631367252,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -55,7 +55,7 @@ class MainSeeder extends Seeder
             'name' => 'Alexander Aquino',
             'email' => 'alexander@gmail.com',
             'phone_number' => 631367010,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -66,7 +66,7 @@ class MainSeeder extends Seeder
             'name' => 'Nicol Ale',
             'email' => 'nicol@gmail.com',
             'phone_number' => 631367222,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -77,7 +77,7 @@ class MainSeeder extends Seeder
             'name' => 'Matias Mendoza',
             'email' => 'matias@gmail.com',
             'phone_number' => 631367572,
-            'profile_picture_path' => 'images/default_profile.avif',
+            'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
             'admin' => false,
             'enabled' => true,
@@ -87,6 +87,7 @@ class MainSeeder extends Seeder
         // ANNOUNCEMENTS
 
         $announcements = [
+            // AD-1
             [
                 'user_id' => 2,
                 'title' => 'Tesla Model 3 Eléctrico en Venta',
@@ -98,6 +99,7 @@ class MainSeeder extends Seeder
                 'year' => 2022,
                 'state' => 'active',
             ],
+            // AD-2
             [
                 'user_id' => 3,
                 'title' => 'Volkswagen Golf 2019 - Oportunidad',
@@ -109,6 +111,7 @@ class MainSeeder extends Seeder
                 'year' => 2019,
                 'state' => 'active',
             ],
+            // AD-3
             [
                 'user_id' => 4,
                 'title' => 'Peugeot 208 2018 - Ideal para Ciudad',
@@ -120,6 +123,7 @@ class MainSeeder extends Seeder
                 'year' => 2018,
                 'state' => 'active',
             ],
+            // AD-4
             [
                 'user_id' => 2,
                 'title' => 'Tesla Model S 2021 - Lujo Eléctrico',
@@ -131,6 +135,7 @@ class MainSeeder extends Seeder
                 'year' => 2021,
                 'state' => 'active',
             ],
+            // AD-5
             [
                 'user_id' => 3,
                 'title' => 'Volkswagen Polo 2020 - Bajo Kilometraje',
@@ -142,6 +147,7 @@ class MainSeeder extends Seeder
                 'year' => 2020,
                 'state' => 'active',
             ],
+            // AD-6
             [
                 'user_id' => 4,
                 'title' => 'Porsche 911 2019 - Deportivo de Ensueño',
@@ -153,6 +159,7 @@ class MainSeeder extends Seeder
                 'year' => 2019,
                 'state' => 'active',
             ],
+            // AD-7
             [
                 'user_id' => 2,
                 'title' => 'Citroën C4 2020 - Familiar y Espacioso',
@@ -164,6 +171,7 @@ class MainSeeder extends Seeder
                 'year' => 2020,
                 'state' => 'active',
             ],
+            // AD-8
             [
                 'user_id' => 3,
                 'title' => 'Kia Sportage 2021 - SUV Versátil',
@@ -175,6 +183,7 @@ class MainSeeder extends Seeder
                 'year' => 2021,
                 'state' => 'active',
             ],
+            // AD-9
             [
                 'user_id' => 4,
                 'title' => 'Tesla Model X 2021 - SUV Eléctrico de Lujo',
@@ -186,6 +195,7 @@ class MainSeeder extends Seeder
                 'year' => 2021,
                 'state' => 'active',
             ],
+            // AD-10
             [
                 'user_id' => 2,
                 'title' => 'Volkswagen Jetta 2018 - Confiable y Económico',
@@ -197,6 +207,7 @@ class MainSeeder extends Seeder
                 'year' => 2018,
                 'state' => 'active',
             ],
+            // AD-11
             [
                 'user_id' => 3,
                 'title' => 'Porsche Cayenne 2017 - Lujo y Aventura',
@@ -208,6 +219,7 @@ class MainSeeder extends Seeder
                 'year' => 2017,
                 'state' => 'active',
             ],
+            // AD-12
             [
                 'user_id' => 4,
                 'title' => 'Citroën C3 2016 - Compacto y Económico',
@@ -219,6 +231,7 @@ class MainSeeder extends Seeder
                 'year' => 2016,
                 'state' => 'active',
             ],
+            // AD-13
             [
                 'user_id' => 2,
                 'title' => 'Kia Ceed 2019 - Versátil y Moderno',
@@ -239,146 +252,142 @@ class MainSeeder extends Seeder
         // PHOTOS
         Photo::create([
             'announcement_id' => 1,
-            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/v1735251175/announcement-1-2_d8xpmo.jpg",
-            'image_public_id' => "announcement-1-2_d8xpmo",
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736781506/aaaaa_pa0sbx.jpg",
+            'image_public_id' => "aaaaa_pa0sbx",
         ]);
 
         Photo::create([
             'announcement_id' => 1,
-            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/v1735251175/announcement-1-1_xa0toe.jpg",
-            'image_public_id' => "announcement-1-1_xa0toe",
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736781506/ssss_rat22i.jpg",
+            'image_public_id' => "ssss_rat22i",
         ]);
-
-        Photo::create([
-            'announcement_id' => 1,
-            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/v1735251175/announcement-1-3_ws0dhn.jpg",
-            'image_public_id' => "announcement-1-3_ws0dhn",
-        ]);
-        /* 
-        Photo::create([
-            'announcement_id' => 1,
-            "photo_path" => 'images/announcement-1-2.jpg',
-        ]);
-
-        Photo::create([
-            'announcement_id' => 1,
-            "photo_path" => 'images/announcement-1-3.jpg',
-        ]);
-
+        // AD-2
         Photo::create([
             'announcement_id' => 2,
-            "photo_path" => 'images/announcement-2-1.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736724947/announcements_photos/tlfihz3hlbcnj3k7mnsa.webp",
+            'image_public_id' => "announcements_photos/tlfihz3hlbcnj3k7mnsa",
         ]);
-
+        Photo::create([
+            'announcement_id' => 2,
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736724947/announcements_photos/n5hxxm76bgtt2zeoj2su.jpg",
+            'image_public_id' => "announcements_photos/n5hxxm76bgtt2zeoj2su",
+        ]);
+        // AD-3
         Photo::create([
             'announcement_id' => 3,
-            "photo_path" => 'images/announcement-3-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736725712/announcements_photos/ap8bifeu2ntr99l2lnmr.webp",
+            'image_public_id' => "announcements_photos/ap8bifeu2ntr99l2lnmr",
         ]);
-
         Photo::create([
             'announcement_id' => 3,
-            "photo_path" => 'images/announcement-3-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736725672/announcements_photos/mowdykrnnyegvjf3iznv.jpg",
+            'image_public_id' => "announcements_photos/mowdykrnnyegvjf3iznv",
         ]);
-
+        // AD-4
         Photo::create([
             'announcement_id' => 4,
-            "photo_path" => 'images/announcement-4-1.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736725889/announcements_photos/ydeiwb3erup2sl3f5pq8.webp",
+            'image_public_id' => "announcements_photos/ydeiwb3erup2sl3f5pq8",
         ]);
-
         Photo::create([
             'announcement_id' => 4,
-            "photo_path" => 'images/announcement-4-2.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736725889/announcements_photos/bxcadnyq5yae2w2bqvrk.jpg",
+            'image_public_id' => "announcements_photos/bxcadnyq5yae2w2bqvrk",
         ]);
-
+        // AD-5
         Photo::create([
             'announcement_id' => 5,
-            "photo_path" => 'images/announcement-5-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726044/announcements_photos/tycsvtkvytsycri0deji.webp",
+            'image_public_id' => "announcements_photos/tycsvtkvytsycri0deji",
         ]);
-
         Photo::create([
             'announcement_id' => 5,
-            "photo_path" => 'images/announcement-5-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726044/announcements_photos/nojhfnjye4oli15rzhur.jpg",
+            'image_public_id' => "announcements_photos/nojhfnjye4oli15rzhur",
         ]);
-
+        // AD-6
         Photo::create([
             'announcement_id' => 6,
-            "photo_path" => 'images/announcement-6-1.png',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726193/announcements_photos/murzc80mfpzgrvuy8xvv.jpg",
+            'image_public_id' => "announcements_photos/murzc80mfpzgrvuy8xvv",
         ]);
-
         Photo::create([
             'announcement_id' => 6,
-            "photo_path" => 'images/announcement-6-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726193/announcements_photos/u9fxungl4awo9nadzt8z.webp",
+            'image_public_id' => "announcements_photos/u9fxungl4awo9nadzt8z",
         ]);
-
+        // AD-7
         Photo::create([
             'announcement_id' => 7,
-            "photo_path" => 'images/announcement-7-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726396/announcements_photos/al7stgrb9ixmsyo1t0oq.jpg",
+            'image_public_id' => "announcements_photos/al7stgrb9ixmsyo1t0oq",
         ]);
-
         Photo::create([
             'announcement_id' => 7,
-            "photo_path" => 'images/announcement-7-2.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726473/announcements_photos/rmw84smvev7ucoyizisa.jpg",
+            'image_public_id' => "announcements_photos/rmw84smvev7ucoyizisa",
         ]);
-
+        // AD-8
         Photo::create([
             'announcement_id' => 8,
-            "photo_path" => 'images/announcement-8-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726602/announcements_photos/nc8y3eewi6k5dyypwilr.jpg",
+            'image_public_id' => "announcements_photos/nc8y3eewi6k5dyypwilr",
         ]);
-
         Photo::create([
             'announcement_id' => 8,
-            "photo_path" => 'images/announcement-8-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736726602/announcements_photos/frxe4odcvtsu8dgikdh6.webp",
+            'image_public_id' => "announcements_photos/frxe4odcvtsu8dgikdh6",
         ]);
-
+        // AD-9
         Photo::create([
             'announcement_id' => 9,
-            "photo_path" => 'images/announcement-9-1.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727146/announcements_photos/jw0gu78uecggusijy2fx.jpg",
+            'image_public_id' => "announcements_photos/jw0gu78uecggusijy2fx",
         ]);
-
         Photo::create([
             'announcement_id' => 9,
-            "photo_path" => 'images/announcement-9-2.webp',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727146/announcements_photos/vnynsagt6kch7sc1ayqa.jpg",
+            'image_public_id' => "announcements_photos/vnynsagt6kch7sc1ayqa",
         ]);
-
+        // AD-10
         Photo::create([
             'announcement_id' => 10,
-            "photo_path" => 'images/announcement-10-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727220/announcements_photos/dyimcacx8bpbsnn8qkno.jpg",
+            'image_public_id' => "announcements_photos/dyimcacx8bpbsnn8qkno",
         ]);
-
         Photo::create([
             'announcement_id' => 10,
-            "photo_path" => 'images/announcement-10-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727220/announcements_photos/kz8qbcjwnpvjqnhopt8e.avif",
+            'image_public_id' => "announcements_photos/kz8qbcjwnpvjqnhopt8e",
         ]);
-
+        // AD-11
         Photo::create([
             'announcement_id' => 11,
-            "photo_path" => 'images/announcement-11-1.avif',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727336/announcements_photos/mpx2ls0iiksjoswjzqt3.jpg",
+            'image_public_id' => "announcements_photos/mpx2ls0iiksjoswjzqt3",
         ]);
-
         Photo::create([
             'announcement_id' => 11,
-            "photo_path" => 'images/announcement-11-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727336/announcements_photos/ej8goj0lcanm1e0c1dtb.jpg",
+            'image_public_id' => "announcements_photos/ej8goj0lcanm1e0c1dtb",
         ]);
-
+        // AD-12
         Photo::create([
             'announcement_id' => 12,
-            "photo_path" => 'images/announcement-12-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727455/announcements_photos/vxyuj7wmv7o8cfnifg3u.jpg",
+            'image_public_id' => "announcements_photos/vxyuj7wmv7o8cfnifg3u",
         ]);
-
+        // AD-13
         Photo::create([
             'announcement_id' => 13,
-            "photo_path" => 'images/announcement-13-1.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727519/announcements_photos/gz4onzjkjhpywlsaqooe.jpg",
+            'image_public_id' => "announcements_photos/gz4onzjkjhpywlsaqooe",
         ]);
-
         Photo::create([
             'announcement_id' => 13,
-            "photo_path" => 'images/announcement-13-2.jpg',
+            'image_url' => "https://res.cloudinary.com/dxvjedi2n/image/upload/f_avif/v1736727518/announcements_photos/ndoczfegzkra4xu1bpbn.webp",
+            'image_public_id' => "announcements_photos/ndoczfegzkra4xu1bpbn",
         ]);
-
-        Photo::create([
-            'announcement_id' => 13,
-            "photo_path" => 'images/announcement-13-3.jpg',
-        ]); */
 
         // REVIEWS
         Review::create([

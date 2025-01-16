@@ -31,7 +31,7 @@ class MainSeeder extends Seeder
 
         User::create([
             'name' => 'Adrian Sullca',
-            'email' => 'adrian.sullca@cirvianum.cat',
+            'email' => 'adrian.sullcaa@cirvianum.cat',
             'phone_number' => 631367253,
             'profile_picture_path' => 'https://res.cloudinary.com/dxvjedi2n/image/upload/v1736552760/profile_pictures/kbtqw3i0j0ylriivop6b.png',
             'password' => bcrypt('Segura1506@'),
